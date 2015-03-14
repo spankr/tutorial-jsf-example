@@ -6,7 +6,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>A Simple JavaServer Faces 2.0 View</title>
+        <title>A Simple JavaServer Faces 2.0 View from Mojarra</title>
         <link href="../resources/css/main.css" rel="stylesheet" type="text/css"/> 
     </h:head>
     <h:body>
@@ -45,7 +45,7 @@
             <h:commandButton value="I wish to be created" action="#{userBean.userSubmit}"/>
         </h:form>
         <h:outputText escape="false" rendered="#{userBean.registered}" value="&lt;p style='font-weight: bold;'&gt;You have already registered and cannot register another user.&lt;/p&gt;"/><br />
-        <h:outputLink value="/dk-jsf-example" style="padding-right: 10px;">Return to index</h:outputLink><h:outputLink value="user-success.jsf">Go to list of users</h:outputLink>
+        <h:outputLink value="/tutorial-jsf-example" style="padding-right: 10px;">Return to index</h:outputLink><h:outputLink value="user-success.jsf">Go to list of users</h:outputLink>
         <hr/>
     </h:body>
 </html>

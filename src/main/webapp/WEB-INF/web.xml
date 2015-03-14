@@ -6,17 +6,12 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
     <!-- The basic information here was pieced together from other JSF examples out there as I collected info to get this to work. -->
-    <display-name>mojarra-regression-test</display-name>
-    <description>A simple regression test to make it easier to get your bug fixed. The only reason we need a web.xml is to set the PROJECT_STAGE to Development.  If you have a web.xml, then you need to map the FacesServlet.</description>
-
+    <display-name>tutorial-jsf</display-name>
+    <description>Small jsf example to play with</description>
+    <!-- for more advice: https://java.net/projects/mojarra/lists/commits/archive/2011-05/message/5 -->
+    <!-- Thank you, Ed Burns! -->
     <context-param>
-        <description>
-            Tell the runtime where we are in the project development
-            lifecycle.  Valid values are: 
-            Development, UnitTest, SystemTest, or Production.
-            The runtime will display helpful hints to correct common mistakes
-            when the value is Development.
-        </description>
+        <description>Valid values are: Development, UnitTest, SystemTest, or Production.</description>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
