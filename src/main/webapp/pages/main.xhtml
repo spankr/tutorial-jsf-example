@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:utils="http://java.sun.com/jsf/composite/utils"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>A Simple JavaServer Faces 2.0 View</title>
+        <link href="../resources/css/main.css" rel="stylesheet" type="text/css"/> 
+    </h:head>
+    <h:body>
+        <h:form rendered="#{!userBean.registered}" id="userForm">
+            First Name: 
+            <h:inputText value="#{userBean.firstName}" required="true" 
+                         requiredMessage="First name is a required field" 
+                         id="fName"/>
+            <h:message for="fName" styleClass="error"/><br />
+            Last Name:
+            <h:inputText value="#{userBean.lastName}" required="true"
+                         requiredMessage="Last name is a required field"
+                         id="lName"/>
+            <h:message for="lName" styleClass="error"/><br />
+            Date of Birth:
+            <p:calendar value="#{userBean.dob}" navigator="true" 
+                        yearRange="1900:c" id="dob" required="true"
+                        requiredMessage="Date of Birth is a required field"
+                        validator="#{userBean.validateDate}"/>
+            <h:message for="dob" styleClass="error"/><br/>
+            Sex:
+            <h:selectOneMenu value="#{userBean.sex}">
+                <f:selectItems value="#{userBean.genders}"/>
+            </h:selectOneMenu><br />
+            Email:
+            <h:inputText value="#{userBean.email}" required="true"
+                         requiredMessage="Email is a required field"
+                         validator="#{userBean.validateEmail}"
+                         id="email"/>
+            <h:message for="email" styleClass="error"/><br />
+            What is the airspeed velocity of an unladen swallow?
+            <h:inputText value="#{userBean.answer}" required="true"
+                         requiredMessage="You must answer this question"
+                         id="swallow"/>
+            <h:message for="swallow" styleClass="error"/><br />
+            <h:commandButton value="I wish to be created" action="#{userBean.userSubmit}"/>
+        </h:form>
+        <h:outputText escape="false" rendered="#{userBean.registered}" value="&lt;p style='font-weight: bold;'&gt;You have already registered and cannot register another user.&lt;/p&gt;"/><br />
+        <h:outputLink value="/dk-jsf-example" style="padding-right: 10px;">Return to index</h:outputLink><h:outputLink value="user-success.jsf">Go to list of users</h:outputLink>
+        <hr/>
+    </h:body>
+</html>

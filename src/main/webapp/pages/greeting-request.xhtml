@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Request a Greeting</title>
+        <style>
+            dl {border: solid black 1px;}
+            dd { font-weight:bold;}
+            .hint {font-style:italic;}
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>Who would you like to greet?</h2>
+            <h:inputText  id="userName"
+                          title="Enter Name:"
+                          value="#{greetingRequestBean.name}">
+            </h:inputText>
+            <p><h:commandButton id="submit" value="Submit" action="greeting-response"/></p>
+        </h:form>
+        <hr/>
+    </h:body>
+</html>

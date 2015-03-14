@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>A Simple JavaServer Faces 2.0 View</title>
+        <link href="../resources/css/main.css" rel="stylesheet" type="text/css"/> 
+    </h:head>
+    <h:body>
+        <h:messages/>
+        <h:dataTable var="user" value="#{userBeanManager.users}" border="1" styleClass="userTable"
+                     rowClasses="odd, even">
+            <h:column headerClass="col1">
+                <f:facet name="header">First Name</f:facet>
+                    #{user.firstName}
+            </h:column>
+            <h:column headerClass="col2">
+                <f:facet name="header">Last Name</f:facet>
+                    #{user.lastName}
+            </h:column>
+            <h:column headerClass="col3">
+                <f:facet name="header">DOB</f:facet>
+                    #{user.dob}
+            </h:column>
+            <h:column headerClass="col4">
+                <f:facet name="header">Sex</f:facet>
+                    #{user.sex}
+            </h:column>
+            <h:column headerClass="col5">
+                <f:facet name="header">Email</f:facet>
+                    #{user.email}
+            </h:column>
+            <h:column headerClass="col6">
+                <f:facet name="header">What is the airspeed velocity of an unladen swallow?</f:facet>
+                    #{user.answer}
+            </h:column>
+        </h:dataTable><br />
+        <h:outputLink value="main.jsf">Return to registration!</h:outputLink>
+    </h:body>
+</html>
